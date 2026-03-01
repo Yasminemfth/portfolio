@@ -76,7 +76,7 @@ Récupérer votre **clé API**.
 
 ---
 
-## 2 Variables d’environnement
+## ✨Variables d’environnement
 
 Créer un fichier `.env.local` à la racine du projet :
 
@@ -88,7 +88,7 @@ RESEND_API_KEY= your_api_key_here
 
 ---
 
-## 📄 Modifier l’adresse de réception
+## 📄 Modifier l’adresse mail
 
 Dans le fichier :
 
