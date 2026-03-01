@@ -66,7 +66,7 @@ const projects: Project[] = [
 {
   title: "projet Tailwind CSS – Intégration de maquette",
   slug: "tailwind-css",
-  role: "Intégratrice Front-End",
+  role: "Intégratrice et Développeuse Front-End",
   year: "2025",
 
   description:
@@ -102,11 +102,11 @@ const projects: Project[] = [
 {
   title: "projet Creative Dev – Expérience narrative interactive",
   slug: "creative-dev",
-  role: "Front-End Developer",
+  role: "Développeuse Front-End",
   year: "2026",
 
   description:
-    "projet de Creative Development explorant la tendresse, la peur et le deuil à travers une expérience narrative interactive.\n\nDeux personnages tentent de s’étreindre mais sont séparés par une force invisible. La peur apparaît lorsque l’un est envahi par des mains anonymes, avant de laisser place au deuil dans une scène finale plongée dans l’obscurité, éclairée par une seule bougie.\n\nL’utilisateur progresse à l’aide des flèches du clavier et d’interactions spécifiques (navigation latérale, clics, extinction de la bougie), renforçant l’immersion et l’impact émotionnel.",
+    "Projet de Creative Development explorant la tendresse, la peur et le deuil à travers une expérience narrative interactive.\n\nDeux personnages tentent de s’étreindre mais sont séparés par une force invisible. La peur apparaît lorsque l’un est envahi par des mains anonymes, avant de laisser place au deuil dans une scène finale plongée dans l’obscurité, éclairée par une seule bougie.\n\nL’utilisateur progresse à l’aide des flèches du clavier et d’interactions spécifiques (navigation latérale, clics, extinction de la bougie), renforçant l’immersion et l’impact émotionnel.",
 
   video: "https://www.youtube.com/embed/UC4apg8f1H8?mute=1",
 
