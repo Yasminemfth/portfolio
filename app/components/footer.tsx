@@ -38,7 +38,7 @@ export default function Footer() {
           className={styles.icon}
         >
           <Image 
-            src="/footer/youtube.png" 
+            src="/footer/Youtube.png" 
             alt="YouTube" 
             width={40} 
             height={40} 
