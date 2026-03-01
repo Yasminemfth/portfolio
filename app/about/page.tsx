@@ -1,9 +1,6 @@
 "use client"
 
-/* composant image next */
 import Image from "next/image"
-
-/* css module about */
 import styles from "./about.module.css"
 
 /* page about */
@@ -11,7 +8,7 @@ export default function AboutPage() {
   return (
     <main className={styles.aboutPage}>
 
-      {/* ================= ABOUT ME ================= */}
+      {/*  about me  */}
       <section className={styles.aboutSection}>
 
         {/* texte */}
@@ -38,7 +35,7 @@ export default function AboutPage() {
             était faite pour moi : transformer des idées en expériences concrètes et interactives.
           </p>
 
-          {/* stack actuelle */}
+          {/* techno appris etc actuelle */}
           <p className={styles.paragraph}>
             Aujourd’hui, je développe des applications web mêlant code, design et interactivité
             avec JavaScript, React, Next.js, PHP, SQL et Python.
@@ -47,7 +44,7 @@ export default function AboutPage() {
 
         </div>
 
-        {/* image portrait */}
+        {/* image moi */}
         <div className={styles.imageContainer}>
           <Image
             src="/about/yasmine.jpg"
@@ -61,10 +58,10 @@ export default function AboutPage() {
       </section>
 
 
-      {/* ================= PASSIONS ================= */}
+      {/*  passions  */}
       <section className={styles.aboutSection}>
 
-        {/* image passions */}
+        {/* imge passion */}
         <div className={styles.imageContainer}>
           <Image
             src="/about/passion.png"
@@ -102,14 +99,14 @@ export default function AboutPage() {
       </section>
 
 
-      {/* ================= EXPERIENCES ================= */}
+      {/*  experience  */}
       <section className={styles.aboutSection}>
 
         <div className={styles.sectionContent}>
 
           <h2 className={styles.sectionTitle}>Experiences</h2>
 
-          {/* experience 1 */}
+          {/* experience 1 : delegué de la classe de cdi */}
           <article className={styles.paragraph}>
             <strong>🎓 Représentante des étudiants</strong><br />
             Représentation auprès de l’administration, médiation et transmission d’informations.
@@ -119,7 +116,7 @@ export default function AboutPage() {
 
           {/* experience 2 */}
           <article className={styles.paragraph}>
-            <strong>🚀 Chef de projet – BAP</strong><br />
+            <strong>🚀 Cheffe de projet – BAP</strong><br />
             Encadrement d’une équipe de 8 étudiants, gestion du planning et relation cliente.
             <br />
             → Gestion de projet et coordination.
@@ -135,7 +132,7 @@ export default function AboutPage() {
 
         </div>
 
-        {/* image experiences */}
+        {/* imge experiences */}
         <div className={styles.imageContainer}>
           <Image
             src="/about/experience.png"
@@ -148,7 +145,7 @@ export default function AboutPage() {
       </section>
 
 
-      {/* ================= PROJECTS & DOC ================= */}
+      {/*  projet et documentations */}
       <section className={styles.aboutSection}>
 
         {/* image code */}
@@ -185,7 +182,7 @@ export default function AboutPage() {
             Également, si mon profil vous intéresse, n’hésitez pas à me contacter via le formulaire.
           </p>
 
-          {/* petite citation signature */}
+          {/* ptite citation */}
           <blockquote className={styles.quote}>
             “Code is not just logic — it's storytelling through systems.”
           </blockquote>
