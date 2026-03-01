@@ -51,7 +51,7 @@ export default function Header() {
         {/* bttn projects */}
         <Link href="/projects" className={styles.button}>
           <Image
-            src="/mushroom.png"
+            src="/header/mushroom.png"
             alt="" /* pas besoin car decoratif */
             width={25}
             height={25}
@@ -63,7 +63,7 @@ export default function Header() {
         {/* bttn about */}
         <Link href="/about" className={styles.button}>
           <Image
-            src="/mushroom.png"
+            src="/header/mushroom.png"
             alt=""
             width={25}
             height={25}
@@ -75,7 +75,7 @@ export default function Header() {
         {/* bttn contact */}
         <Link href="/contact" className={styles.button}>
           <Image
-            src="/mushroom.png"
+            src="/header/mushroom.png"
             alt=""
             width={25}
             height={25}
