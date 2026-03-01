@@ -41,7 +41,7 @@ L’objectif est de présenter :
 
 - Design responsive 
 - SEO optimisé via metadata Next.js
-- essayer de faire le truc le plus optimisé
+- Effort particulier porté sur l’optimisation et la structure du projet
 - Architecture en composants réutilisables
 - Routing dynamique avec `[slug]`
 - API Route sécurisée pour l’envoi d’e-mails
