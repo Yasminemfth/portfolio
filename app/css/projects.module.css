@@ -1,0 +1,233 @@
+/* section principale (fond + centrage + bg image) */
+.section {
+  position: relative;
+  min-height: 100vh; /* prend tte la hauteur écran */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  padding: 120px 2rem 4rem; /* espace haut + bas */
+  overflow: hidden;
+  background: url("/background/bg3.png") center 75% / cover no-repeat; /* image bg */
+}
+
+/* effet sombre au dessus du bg */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* prend toute la section */
+  background: rgba(0, 0, 0, 0.32); /* assombri un peu */
+  z-index: 0;
+}
+
+/* remet le contenu au dessus de l'effet sombre */
+.section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* header page (juste le titre pas vrai header global) */
+.pageHeader {
+  margin-bottom: 2.3rem; /* espace sous le titre */
+}
+
+.pageTitle {
+  font-family: var(--font-rocksalt);
+  font-size: 2.4rem;
+  color: #5a2d0c;
+  text-align: center;
+}
+
+/* conteneur principal effet éventail (aide librairie css )*/
+.fan {
+  --spread: 26deg;   /* ouverture cartes */
+  --cardW: 260px;    /* largeur carte */
+  --cardH: 340px;    /* hauteur carte */
+
+  position: relative;
+  width: 640px;
+  height: 420px;
+  perspective: 1200px; /* effet 3D */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* carte solo */
+.card {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  width: var(--cardW);
+  height: var(--cardH);
+
+  transform-style: preserve-3d;
+  transform-origin: 50% calc(100% + 140px); /* pt rotation */
+
+  border-radius: 18px;
+  background: #b47c5c;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+  padding: 1.2rem;
+
+  cursor: pointer;
+  transition: transform 0.4s ease, z-index 0.4s ease, filter 0.4s ease;
+
+  /* calcul position dynamique */
+  --mid: calc((var(--count) - 1) / 2);
+  --d: calc(var(--i) - var(--active));
+  --gt: clamp(0, (var(--d) - var(--mid)) * 999, 1);
+  --lt: clamp(0, ((-1 * var(--mid)) - var(--d)) * 999, 1);
+  --dw: calc(var(--d) - var(--gt) * var(--count) + var(--lt) * var(--count));
+
+  /* rotation  */
+  transform:
+    translateX(-50%)
+    rotate(calc(var(--dw) * (var(--spread) / (var(--count) - 1))))
+    translateY(0);
+
+  z-index: calc(20 - (var(--dw) * var(--dw))); /* carte du centre au dessus */
+}
+
+/* image dans la carte */
+.thumb {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  margin: 0 auto 1.4rem;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.thumbImg {
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+/*  zoom au hover */
+.card:hover .thumbImg {
+  transform: scale(1.06);
+}
+
+/* titre carte */
+.cardTitle {
+  font-size: 1.1rem;
+  margin: 0.4rem 0;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* description */
+.desc {
+  font-size: 0.9rem;
+  opacity: 0.95;
+  text-align: center;
+  line-height: 1.35rem;
+  margin-bottom: 1.4rem;
+  color: #fff;
+}
+
+/* bouton detail */
+.detailBtn {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  background: #e8d9c7;
+  color: #3a2a20;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+/* effet hover bouton */
+.detailBtn:hover {
+  transform: translateX(-50%) translateY(-4px);
+  background: #f3e7d9;
+}
+
+/* conteneur flèches bas */
+.navBottom {
+  width: 640px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* bouton flèche */
+.arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.25);
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  transition: 0.25s ease;
+}
+
+/* hover flèche */
+.arrow:hover {
+  background: rgba(255,255,255,0.45);
+  transform: translateY(-3px);
+}
+
+/* responsive tablette */
+@media (max-width: 820px) {
+  .fan {
+    width: 100%;
+    --cardW: 230px; /* cartes + petites */
+    --cardH: 320px;
+  }
+
+  .navBottom {
+    width: 100%;
+  }
+}
+
+/* responsive mobile */
+@media (max-width: 480px) {
+  .fan {
+    --cardW: 180px;
+    --cardH: 260px;
+    height: 340px;
+  }
+
+  .card {
+    top: 60px;
+    padding: 0.9rem;
+  }
+
+  .thumb {
+    height: 100px;
+  }
+
+  .cardTitle {
+    font-size: 0.95rem;
+  }
+
+  .desc {
+    font-size: 0.75rem;
+    line-height: 1.1rem;
+  }
+
+  .detailBtn {
+    font-size: 0.75rem;
+    padding: 0.45rem 1rem;
+  }
+
+  .arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}

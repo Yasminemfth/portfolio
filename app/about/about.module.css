@@ -1,0 +1,153 @@
+/*page about global*/
+.aboutPage {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 10%;
+  color: hsl(37, 62%, 89%);
+  background: url("/background/bg7.png") center / cover no-repeat;
+}
+
+.aboutPage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+  z-index: 0;
+}
+
+.aboutPage > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* section about*/
+
+.aboutSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  margin-bottom: 140px;
+}
+
+.sectionContent {
+  max-width: 600px;
+}
+
+/* title */
+
+.pageTitle {
+  font-family: var(--font-rocksalt);
+  font-size: 56px;
+  color: #5a2d0c;
+  margin-bottom: 30px;
+}
+
+.sectionTitle {
+  font-family: var(--font-rocksalt);
+  font-size: 36px;
+  color: #f4e6d0;
+  margin-bottom: 20px;
+}
+
+/* text */
+
+.paragraph {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+.paragraphSmall {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* LIST */
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.list li {
+  color:white;
+  margin-bottom: 10px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #5a2d0c;
+}
+
+/* imge */
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.sectionImage {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease;
+}
+
+.sectionImage:hover {
+  transform: scale(1.03);
+}
+
+/* citation */
+
+.quote {
+  color: #ffffff;
+  margin-top: 30px;
+  font-style: italic;
+  font-size: 17px;
+  opacity: 0.9;
+  border-left: 3px solid #5a2d0c;
+  padding-left: 18px;
+}
+
+/* responsive */
+
+@media (max-width: 1000px) {
+
+  .aboutPage {
+    padding: 80px 6%;
+  }
+
+  .aboutSection {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 90px;
+    text-align: center;
+  }
+
+  .pageTitle {
+    font-size: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 26px;
+  }
+
+  .paragraph {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .sectionImage {
+    max-width: 420px;
+  }
+}

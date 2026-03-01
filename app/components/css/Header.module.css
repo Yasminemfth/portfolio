@@ -1,0 +1,146 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 4rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 50;
+}
+
+/* logo */
+.logoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.cat {
+  display: block;
+}
+
+/* nav */
+.nav {
+  display: flex;
+  gap: 3rem;
+}
+
+/* bttns */
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  background-color: #e8d5b7;
+  padding: 0.8rem 2.5rem;
+  border-radius: 100px;
+
+  font-family: var(--font-rocksalt);
+  font-size: 1.2rem;
+  color: #5a2d0c;
+
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  background-color: #f3e1c5;
+}
+
+/* burger menu  */
+.menuToggle {
+  display: none;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 60;
+}
+
+.burger span {
+  width: 28px;
+  height: 3px;
+  background: #5a2d0c;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  .nav {
+    gap: 1.5rem;
+  }
+
+  .button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+
+  .header {
+    position: relative;
+    padding: 1.5rem;
+
+    display: flex;
+    justify-content: center; /* centre le logo */
+    align-items: center;
+  }
+
+  /* Logo centré */
+  .logoWrapper {
+    justify-content: center;
+  }
+
+  /* burger en haut à droite */
+  .burger {
+    display: flex;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* menu déroulant */
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    background: #d9c2a3;
+    padding: 2rem 0;
+
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+
+    z-index: 40;
+  }
+
+  .menuToggle:checked ~ .nav {
+    transform: scaleY(1);
+  }
+
+  .button {
+    width: 80%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}

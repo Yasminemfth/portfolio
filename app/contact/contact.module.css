@@ -1,0 +1,112 @@
+/* app/contact/contact.module.css */
+
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 4rem 2rem;
+
+  background-image: url("/background/bg7.png"); /* même fond que about */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* effet léger comme homepage */
+.wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 0;
+}
+
+/* pour que le form soit au-dessus effet*/
+.wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* form carde */
+
+.formContainer {
+    margin-top: 5%;
+  width: 100%;
+  max-width: 600px;
+  background: rgba(214, 193, 160, 0.92);
+  padding: 3rem;
+  border-radius: 40px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.title {
+    font-family: var(--font-rocksalt);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #5a2d0c;
+}
+
+.label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #4a2208;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background: #f5e6cc;
+  color:black;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.textarea {
+  border-radius: 25px;
+  resize: none;
+}
+
+textarea.input {
+  resize: none;
+}
+
+.button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 50px;
+  border: none;
+  background: #7b3f00;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  background: #5e2e00;
+}
+
+/*message succes et error*/
+.success {
+  margin-top: 1rem;
+  color: green;
+  text-align: center;
+}
+
+.error {
+  margin-top: 1rem;
+  color: red;
+  text-align: center;
+}

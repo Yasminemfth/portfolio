@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
+/* variables principales */
 :root {
-  --background: #ffffff;
+  --background:  #d9c2a3;
   --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* font par Next.js */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-hand: var(--font-rocksalt);
 }
 
+/* Dark mode  un peu bancal*/
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ca0000;
-    --foreground: #ededed;
+    --background:  #d9c2a3;
+    --foreground: #2b1a10;
   }
 }
 
+/* base */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* rock Salt pour header + nom */
+header a,
+.name {
+  font-family: var(--font-rocksalt);
+}
+
+/* rock Salt pour titres principaux */
+h1 {
+  font-family: var(--font-rocksalt);
+  letter-spacing: 1px;
 }
